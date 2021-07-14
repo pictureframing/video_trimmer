@@ -64,6 +64,8 @@ class ThumbnailViewer extends StatelessWidget {
         if (snapshot.hasData) {
           List<Uint8List?> _imageBytes = snapshot.data!;
           return ListView.builder(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
               scrollDirection: Axis.horizontal,
               itemCount: _imageBytes.length,
               itemBuilder: (context, index) {
